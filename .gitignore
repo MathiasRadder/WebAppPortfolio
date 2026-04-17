@@ -57,3 +57,12 @@ nunit-*.xml
 .vs/
 WebPortfolio/appsettings.json
 WebPortfolio/appsettings.Development.json
+WebPortfolio/dotnet-tools.json
+WebPortfolio/Properties/PublishProfiles/site63967-WebDeploy2.pubxml.user
+WebPortfolio/Properties/PublishProfiles/site63967-WebDeploy2.pubxml
+WebPortfolio/Properties/PublishProfiles/site63967-WebDeploy1.pubxml.user
+WebPortfolio/Properties/PublishProfiles/site63967-WebDeploy1.pubxml
+WebPortfolio/Properties/PublishProfiles/site63967-WebDeploy.pubxml.user
+WebPortfolio/Properties/PublishProfiles/site63967-WebDeploy.pubxml
+WebPortfolio/Properties/PublishProfiles/FolderProfile.pubxml.user
+WebPortfolio/Properties/PublishProfiles/FolderProfile.pubxml
