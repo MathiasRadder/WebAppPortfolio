@@ -1,0 +1,22 @@
+﻿@using DataPortfolio.Models;
+@using WebPortfolio.Models;
+@using WebPortfolio.ViewComponents
+@model PageSectionViewModel
+
+@if (Model != null)
+{
+	@await Component.InvokeAsync(typeof(TitleSectionComponent), Model.Title)
+
+	<div id="SectionInTwoLayout">
+		@await Component.InvokeAsync(typeof(TextBoxComponent), Model.TextBoxViewModelList)
+		
+		@if (!String.IsNullOrWhiteSpace(Model.ImageLocation))
+		{
+			<img class="ImageSection" src="@Model.ImageLocation" />
+		}
+	</div>
+}
+else
+{
+	<p>error: pagesection not found.</p>
+}

@@ -1,0 +1,30 @@
+﻿@using DataPortfolio.Models;
+@using WebPortfolio.Models;
+@using WebPortfolio.ViewComponents
+@model PageSectionViewModel
+
+@if (Model != null)
+{
+	@await Component.InvokeAsync(typeof(TitleSectionComponent), Model.Title)
+
+	<div id="SectionInTwoLayout">
+		@await Component.InvokeAsync(typeof(TextBoxComponent), Model.TextBoxViewModelList)
+
+		@if (!String.IsNullOrWhiteSpace(Model.ImageLocation))
+		{
+			<iframe id="VideoPlacement"
+					src=" @Model.ImageLocation"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write;
+						encrypted-media; gyroscope; picture-in-picture;
+						web-share" referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen>
+			</iframe>
+		}
+
+	</div>
+}
+else
+{
+	<p>error: pagesection not found.</p>
+}

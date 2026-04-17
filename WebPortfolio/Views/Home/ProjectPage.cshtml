@@ -1,0 +1,21 @@
+﻿@using DataPortfolio.Models;
+@using WebPortfolio.Models;
+@using WebPortfolio.ViewComponents;
+@model List<PageSectionViewModel>
+@{
+	ViewData["Title"] = "Project Page";
+	string? projectTitle = (string?)ViewData["projectTitle"];
+}
+
+@if (projectTitle != null && Model != null)
+{
+	<h1 class="TitlePage">@projectTitle</h1>
+	@foreach (var psvm in Model)
+	{
+		@await Component.InvokeAsync(typeof(ViewSectionComponent), psvm)
+	}
+}
+else
+{
+	<h2>Error loading page</h2>
+}

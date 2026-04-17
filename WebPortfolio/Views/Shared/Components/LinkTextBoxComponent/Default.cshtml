@@ -1,0 +1,60 @@
+﻿@using DataPortfolio.Models;
+@using WebPortfolio.Models;
+@model List<TextBoxViewModel>
+
+@if (Model != null)
+{
+
+	<div class="TextSection">
+		@foreach (var textBoxesVM in Model)
+		{
+
+			<ul class="LinkList">
+				@foreach (var textPartsVM in textBoxesVM.textPartList)
+				{
+					if (textPartsVM.IconVM == null)
+					{
+						<li>
+							Error: link and icon not found.
+
+						</li>
+
+						continue;
+					}
+					if (textPartsVM.IconVM.Link == null)
+					{
+						<li>
+							@textPartsVM.IconVM.Addtext
+							@if (!String.IsNullOrWhiteSpace(@textPartsVM.IconVM.ImageLocation))
+							{
+								<img class="MaxSizeLinkIconImage" src="@textPartsVM.IconVM.ImageLocation"
+									 alt="@textPartsVM.IconVM.IconName" />
+							}
+						</li>
+					}
+					else
+					{
+						<li class="LinkButton">
+							@*Create css class for it*@
+							<a href="@textPartsVM.IconVM.Link" class="LinkText">
+								@textPartsVM.IconVM.Addtext
+								@if (!String.IsNullOrWhiteSpace(@textPartsVM.IconVM.ImageLocation))
+								{
+									<img class="MaxSizeLinkIconImage" src="@textPartsVM.IconVM.ImageLocation"
+										 alt="@textPartsVM.IconVM.IconName" />
+								}
+
+							</a>
+
+						</li>
+					}
+
+				}
+			</ul>
+		}
+	</div>
+}
+else
+{
+	<p>error: pagesection not found.</p>
+}

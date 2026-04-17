@@ -1,0 +1,25 @@
+﻿@using DataPortfolio.Models;
+@using WebPortfolio.Models;
+@using WebPortfolio.ViewComponents;
+@model PageSectionViewModel
+
+@if (Model != null)
+{
+	@await Component.InvokeAsync(typeof(TitleSectionComponent), Model.Title)
+
+	<div>
+		@if (!String.IsNullOrWhiteSpace(Model.ImageLocation))
+		{
+			<img id="SectionSingleImage" src="@Model.ImageLocation" />
+		}
+		else
+		{
+			<p class="field-validation-error">Error Image not found.</p>
+
+		}
+	</div>
+}
+else
+{
+	<p>error: pagesection not found.</p>
+}

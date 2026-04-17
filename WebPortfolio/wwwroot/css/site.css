@@ -1,0 +1,532 @@
+html {
+    font-size: 14px;
+}
+
+:root {
+    /* adjust this value if your navbar height differs */
+    --navbar-height: 70px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #f0f7ff;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+
+.nav-item {
+    margin: 1rem;
+    font-size: large;
+}
+
+#nav-image {
+    max-height: 100px;
+    margin-right: 1rem;
+}
+
+input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+input, textarea, select {
+    display: block;
+    margin-bottom: 10px;
+}
+
+    input[type='checkbox'], input[type='radio'] {
+        display: inline;
+    }
+
+#SectionSingleImage {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 4rem;
+}
+
+.MaxSizeIconImage {
+    width: 24px;
+    height: auto;
+}
+
+
+.MaxSizeLinkIconImage {
+    max-height: 30px;
+    max-width: 65px;
+}
+
+
+.ImageSection {
+    max-width: 40%; /* image will take up to 40% of the container on wide screens */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-top: 0.4rem;
+}
+
+.TitlePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4rem;
+}
+
+.TitleSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+#SectionInTwoLayout {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap; /* allows stacking on small screens */
+    padding-bottom: 3rem;
+}
+
+#SectionLinkRightLayout {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    gap: 0rem;
+    margin: 0rem 0;
+    flex-wrap: wrap; /* allows stacking on small screens */
+    padding-bottom: 3rem;
+    padding-right: 6rem;
+}
+
+/* Text area - limit max width so it doesn't grow too wide */
+.TextSection {
+    flex: 1 1 48%;
+    max-width: 30rem; /* absolute maximum width to prevent overly wide text columns */
+    min-width: 220px;
+    box-sizing: border-box;
+}
+
+    .TextSection li {
+        margin-bottom: 0.5rem;
+    }
+
+.LinkText {
+    text-decoration: none;
+    color: black;
+}
+
+.LinkList {
+    list-style-type: none;
+}
+
+
+
+.IconSection {
+    max-width: 100px;
+    max-height: 60px;
+    height: auto;
+    object-fit: cover;
+}
+
+.IconTextSection {
+    max-width: 100px;
+    max-height: 30px;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.pb-3 {
+    margin: 3rem 8rem auto 8rem
+}
+
+
+#ProjectList {
+    margin: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    box-sizing: border-box;
+    justify-content: flex-start;
+}
+
+    /* Replace the existing selector blocks for '#ProjectList > *' with the following to center content */
+    #ProjectList > * {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* center children horizontally */
+        justify-content: flex-start; /* keep vertical stacking from the top */
+        text-align: center; /* center inline/text content */
+        flex: 1 1 calc((100% / 3) - 1rem);
+        max-width: calc((100% / 3) - 1rem);
+        box-sizing: border-box;
+        justify-content: flex-start;
+    }
+
+/* Medium screens: at most 2 items per row */
+@media (max-width: 992px) {
+    #ProjectList > * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1 1 calc((100% / 2) - 1rem);
+        max-width: calc((100% / 2) - 1rem);
+    }
+}
+
+/* Small screens: 1 item per row */
+@media (max-width: 575.98px) {
+    #ProjectList > * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    #ProjectList {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        gap: 1rem;
+    }
+}
+
+/* Optional small helper class if you want a fixed card layout:
+   Add `class="project-card"` to each project item in markup and style here. */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-sizing: border-box;
+}
+
+#ProjectTypeSection {
+    align-items: center;
+}
+
+#ProjectTypeTitle {
+    text-align: center;
+}
+
+
+.ProjectBorder {
+    box-sizing: border-box;
+    border-style: initial;
+    border-radius: 1rem;
+    border-color: lightgrey;
+    width: 14rem; /* fixed width */
+    height: 20rem; /* fixed height */
+    text-decoration: none;
+    color: black;
+    overflow: hidden; /* keep children inside the border */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    background-color: white;
+    transition: transform 180ms cubic-bezier(.2,.8,.2,1), box-shadow 180ms cubic-bezier(.2,.8,.2,1);
+    will-change: transform, box-shadow;
+}
+
+    /* Hover state: lift up slightly and add subtle shadow */
+    .ProjectBorder:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Active/pressed state: smaller lift and smaller shadow */
+.ProjectBorder:active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.10);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .ProjectBorder,
+    .ProjectBorder:hover,
+    .ProjectBorder:active {
+        transition: none;
+        transform: none;
+    }
+}
+
+/* Keep general child styling but avoid size constraints that fight the container */
+.ProjectBorder * {
+    color: black;
+    border-image-width: auto;
+    margin: 0 0 0 0;
+}
+
+/* Ensure images fill the available area without expanding the container.
+   object-fit: cover crops the image to the box while preserving aspect ratio. */
+.ProjectBorder > img {
+    width: 100%;
+    height: auto;
+    max-height: 60%; /* reserve space for text/content */
+    object-fit: cover;
+    display: block;
+}
+
+/* Content area below the image that can scroll if there's too much text */
+.ProjectBorder .project-content {
+    padding: 0.5rem;
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    overflow: auto; /* prevents content from growing the card */
+}
+
+#ProjectDesciption
+{
+    line-height: 1.25rem;
+    margin-top: 0.5rem
+}
+
+#ProjectPageIcons {
+    margin-top: auto;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0.5rem;
+}
+
+
+
+
+#VideoPlacement {
+    display: block; /* ensure margin auto centers the element */
+    width: 100%; /* fluid width on small screens */
+    max-width: 560px; /* original max width */
+    aspect-ratio: 16 / 9; /* preserve 16:9 aspect ratio when supported */
+    height: auto; /* fallback for older browsers */
+    margin: 0 auto; /* center horizontally */
+    box-sizing: border-box;
+    padding: 0;
+}
+
+#ResourcesNav {
+    display: flex;
+    flex-basis: auto;
+    align-content: flex-end;
+    gap: 0.5rem;
+    margin-right: 1rem;
+    align-items: center;
+    flex-shrink: 0; /* prevent the resources block from shrinking/collapsing */
+}
+
+.LinksNav {
+    font-size: 2.5rem;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.NavButton {
+    height: 40px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    box-sizing: border-box;
+    border-style: initial;
+    border-radius: 0.5rem;
+    border-width: 3px;
+    align-content: center;
+    background-color: #1e5a9e;
+    color: white;
+    flex-shrink: 0; /* keep buttons visible and prevent them from collapsing */
+}
+
+    .NavButton:hover {
+        background-color: #1e5a9e;
+    }
+
+.FooterLinks {
+    display: flex;
+    justify-content: space-around;
+}
+
+    .FooterLinks i {
+        font-size: 2.5rem;
+        line-height: 1;
+        vertical-align: middle;
+    }
+
+
+.NavBarBorder {
+    width: 100%;
+    padding-bottom: 0.25rem;
+    /* make navbar fixed so it stays visible on scroll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1040; /* sit above other content */
+    background-clip: padding-box; /* avoid content bleed */
+}
+
+#MainBackground { /*Perhaps this should be a border around the main?*/
+    box-sizing: initial;
+    border-radius: 1rem;
+    border-width: 5px;
+}
+
+/* Spacer element that offsets the fixed navbar height */
+.navbar-spacer {
+    height: var(--navbar-height);
+}
+
+/* Responsive tweak: smaller navbar on narrow screens */
+@media (max-width: 576px) {
+    :root { --navbar-height: 64px; }
+}
+
+/* Additional responsive thresholds for the navbar and centered title
+   - On wide screens keep the centered title
+   - On medium and narrow screens hide the centered title so it does not
+     overlap the toggler or nav items
+   - Adjust the navbar spacer height for different breakpoints
+*/
+@media (min-width: 1200px) {
+    /* large screens */
+    :root { --navbar-height: 80px; }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* desktop / large tablet */
+    :root { --navbar-height: 72px; }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* tablet landscape */
+    :root { --navbar-height: 64px; }
+}
+
+/* Hide the centered title earlier so it does not compete for space with nav items.
+   This breakpoint ensures the title disappears before the navbar items begin
+   to wrap or get pushed out of view. */
+/* Hide centered title by default; show only on very wide screens */
+#NavTitle { display: none; }
+.navbar-spacer { height: var(--navbar-height); }
+
+@media (min-width: 1200px) {
+    #NavTitle { display: flex; }
+}
+
+@media (max-width: 575.98px) {
+    /* smallest phones - tighter navbar */
+    :root { --navbar-height: 56px; }
+}
+
+/* Make sure the navbar content (toggler / links) stays on top and clickable */
+.NavBarBorder .navbar-toggler,
+.NavBarBorder .navbar-collapse,
+.NavBarBorder .nav-link,
+.NavBarBorder .NavButton {
+    z-index: 1060;
+}
+
+/* Slight padding so content doesn't butt up against the fixed navbar edges */
+.NavBarBorder .container-fluid {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+.NavColor {
+    background-color: white; /* change to any hex / rgb / css color */
+  
+}
+
+/* Reduce nav item margins on smaller screens so buttons fit better */
+@media (max-width: 768px) {
+    .nav-item { margin: 0.25rem; }
+    .NavButton { height: 36px; padding-left: 0.4rem; padding-right: 0.4rem; }
+}
+
+.LinkButton {
+    min-height: 35px;
+    min-width: 250px;
+    border: solid;
+    background-color: white;
+    border-color: lightgray;
+    border-radius: 0.5rem;
+    border-width: 1px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LinkButton:hover{
+    background-color: lightgray;
+}
+
+
+#PortfolioDescription{
+    width: 32rem;
+    padding-bottom: 3rem;
+    margin-left: 3rem;
+}
+
+#NavTitle{
+   /* Center the navbar title horizontally and vertically within the navbar. */
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   /* display is controlled via media queries to show/hide the title */
+   align-items: center;
+   justify-content: center;
+   height: var(--navbar-height);
+   pointer-events: none; /* allow clicks to hit other controls except the brand */
+   z-index: 1050;
+}

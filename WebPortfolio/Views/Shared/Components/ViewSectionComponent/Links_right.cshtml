@@ -1,0 +1,18 @@
+﻿@using DataPortfolio.Models;
+@using WebPortfolio.Models;
+@using WebPortfolio.ViewComponents
+@model PageSectionViewModel
+
+@if (Model != null)
+{
+	@await Component.InvokeAsync(typeof(TitleSectionComponent), Model.Title)
+
+	<div id="SectionLinkRightLayout">
+		 <div></div> 
+		@await Component.InvokeAsync(typeof(LinkTextBoxComponent), Model.TextBoxViewModelList)
+	</div>
+}
+else
+{
+	<p>error: pagesection not found.</p>
+}

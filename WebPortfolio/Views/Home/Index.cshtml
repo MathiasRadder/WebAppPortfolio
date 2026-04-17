@@ -1,0 +1,50 @@
+﻿@using DataPortfolio.Models;
+@using WebPortfolio.Models;
+@model List<ProjectCardViewModel>
+@{
+	ViewData["Title"] = "Portfolio Home Page";
+}
+
+<div id="PortfolioDescription">
+	<h2>Hi, Mathias here</h2>
+	<p>
+		I am a passionate software developer with a strong foundation in C++, C# and Game
+		Development, currently specialized in .NET Full Stack Development.
+	</p>
+
+	<p>
+		My hobbies are reading non-fiction, sporting, boardgames and TTRPG.
+		Oh, and also of course software developing.
+	</p>
+</div>
+
+
+@foreach (ProjectCardViewModel projectSection in Model)
+{
+	<section id="ProjectTypeSection">
+		<h1 id="ProjectTypeTitle">@projectSection.ProjectTypeTitle</h1>
+		<div id="ProjectList">
+
+			@foreach (var projectPage in projectSection.ProjectPageList)
+			{
+				<a asp-action="ProjectPage" class="ProjectBorder"
+				   asp-route-pageId="@projectPage.Id">
+					@if (!String.IsNullOrWhiteSpace(@projectPage.ImageLocation))
+					{
+						<img id="IconSection" src="@projectPage.ImageLocation" />
+					}
+					<h3>@projectPage.Title</h3>
+					<p id="ProjectDesciption">@projectPage.Description</p>
+
+					<div id="ProjectPageIcons">
+						@foreach (IconViewModel iconVM in projectPage.IconsVM)
+						{
+							<img class="MaxSizeIconImage" src="@iconVM.ImageLocation"
+								 alt="@iconVM.IconName" />
+						}
+					</div>
+				</a>
+			}
+		</div>
+	</section>
+}

@@ -1,0 +1,32 @@
+﻿@using DataPortfolio.Models;
+@using WebPortfolio.Models;
+@model List<TextBoxViewModel>
+
+@if (Model != null)
+{
+	<div class="TextSection">
+		@foreach (var textBoxesVM in Model)
+		{
+			if (!String.IsNullOrWhiteSpace(textBoxesVM.Title))
+			{
+				<h3>@textBoxesVM.Title</h3>
+			}
+			<ul>
+				@foreach (var textPartsVM in textBoxesVM.textPartList)
+				{
+					<li>
+						@if (@textPartsVM.IconVM != null && !String.IsNullOrWhiteSpace(@textPartsVM.IconVM.ImageLocation))
+						{
+							<img class="IconTextSection" src="@textPartsVM.IconVM.ImageLocation" />
+						}
+						@textPartsVM.Text
+					</li>
+				}
+			</ul>
+		}
+	</div>
+}
+else
+{
+	<p>error: Textbox data not found.</p>
+}
