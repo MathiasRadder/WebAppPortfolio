@@ -106,11 +106,12 @@ input, textarea, select {
 
 
 .ImageSection {
-    max-width: 40%; /* image will take up to 40% of the container on wide screens */
+    max-width: 40%;
     width: 100%;
     height: auto;
     object-fit: cover;
     margin-top: 0.4rem;
+    min-width: 16rem;
 }
 
 .TitlePage {
@@ -266,7 +267,9 @@ input, textarea, select {
     border-style: initial;
     border-radius: 1rem;
     border-color: lightgrey;
-    width: 14rem; /* fixed width */
+    /* ensure the card doesn't become too narrow on small screens */
+    min-width: 12rem; /* minimum width to keep content readable on phones */
+    width: auto; /* allow flex parent to control the final width */
     height: 20rem; /* fixed height */
     text-decoration: none;
     color: black;
@@ -512,9 +515,17 @@ input, textarea, select {
 
 
 #PortfolioDescription{
-    width: 32rem;
+    width: clamp(10rem, 40vw, 32rem);
     padding-bottom: 3rem;
     margin-left: 3rem;
+}
+
+@media (max-width: 576px) {
+    #PortfolioDescription {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        width: clamp(10rem, 90%, 32rem);
+    }
 }
 
 #NavTitle{
