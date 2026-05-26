@@ -1,0 +1,82 @@
+# ==========================================
+# ALLOWED: Major Search Engines
+# ==========================================
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ==========================================
+# DISALLOWED: AI & LLM Crawlers
+# ==========================================
+
+# OpenAI (ChatGPT)
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: GPTBot
+Disallow: /
+
+# Google AI (Gemini / Vertex)
+User-agent: Google-Extended
+Disallow: /
+
+# Anthropic (Claude)
+User-agent: Anthropic-AI
+Disallow: /
+User-agent: Claude-Web
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+
+# Apple AI
+User-agent: Applebot-Extended
+Disallow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Disallow: /
+
+# Common Crawl (Massive open dataset used to train AI)
+User-agent: CCBot
+Disallow: /
+
+# Other known AI Scrapers
+User-agent: Omgilibot
+Disallow: /
+User-agent: Omgimarketingbot
+Disallow: /
+User-agent: FacebookBot
+Disallow: /
+User-agent: Diffbot
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: Cohere-ai
+Disallow: /
+
+# ==========================================
+# DISALLOWED: Common Aggressive/Malicious Bots & SEO Scrapers
+# ==========================================
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: Rogerbot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
